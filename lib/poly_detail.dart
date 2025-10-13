@@ -22,7 +22,7 @@ class _DetailPolyState extends State<DetailPoly> {
       body: Column(
         children: [
           SizedBox(height: 20),
-          Text("Nama Poly"),
+          Text("NAMA POLY :"),
           SizedBox(height: 20),
           Text(widget.poly.namaPoly),
           SizedBox(height: 35),

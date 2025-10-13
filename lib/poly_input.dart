@@ -22,46 +22,6 @@ class InputPoly extends StatelessWidget {
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,
       ),
-      body: Padding(
-        padding: EdgeInsets.all(10),
-        child: ListView(
-          children: [
-            // Card 1
-            GestureDetector(
-              child: Card(
-                child: ListTile(
-                  title: Text('Poly Umum'),
-                  onTap: () {
-                    Poly polyUmum = Poly(namaPoly: 'Poly Umum');
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => DetailPoly(poly: polyUmum)));
-                  },
-                ),
-              ),
-            ),
-
-            // Card 2
-            GestureDetector(
-              child: Card(
-                child: ListTile(
-                  title: Text('Poly Anak'),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          //
-        },
-        backgroundColor: Colors.green,
-        foregroundColor: Colors.white,
-        tooltip: "Tambah Data",
-        child: Icon(Icons.add),
-      ),
     );
   }
 }

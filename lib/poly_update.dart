@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:latihan_flutter/model/m_poly.dart';
 import 'package:latihan_flutter/poly_detail.dart';
 
-class InputPoly extends StatefulWidget {
-  const InputPoly({super.key});
+class UpdatePoly extends StatefulWidget {
+  final Poly poly;
+  const UpdatePoly({Key? key, required this.poly}) : super(key: key);
 
   @override
-  State<InputPoly> createState() => _InputPolyState();
+  State<UpdatePoly> createState() => _UpdatePolyState();
 }
 
-class _InputPolyState extends State<InputPoly> {
+class _UpdatePolyState extends State<UpdatePoly> {
   final _formKey = GlobalKey();
   final _nmPoly = TextEditingController();
 
@@ -32,6 +33,14 @@ class _InputPolyState extends State<InputPoly> {
                       )));
         },
         child: Text("Simpan Data"));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      _nmPoly.text = widget.poly.namaPoly;
+    });
   }
 
   @override

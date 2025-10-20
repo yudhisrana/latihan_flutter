@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:latihan_flutter/model/m_poly.dart';
 import 'package:latihan_flutter/poly_detail.dart';
-
-void main() {
-  runApp(const PolyPage());
-}
+import 'package:latihan_flutter/poly_input.dart';
 
 class PolyPage extends StatelessWidget {
   const PolyPage({super.key});
@@ -59,7 +56,8 @@ class DashboardPoly extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => InputPoly()));
         },
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,

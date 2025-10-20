@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:latihan_flutter/model/m_poly.dart';
+import 'package:latihan_flutter/nav/sidebar.dart';
 import 'package:latihan_flutter/poly_detail.dart';
 import 'package:latihan_flutter/poly_input.dart';
 
@@ -23,6 +24,7 @@ class DashboardPoly extends StatelessWidget {
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,
       ),
+      drawer: Sidebar(),
       body: Padding(
         padding: EdgeInsets.all(10),
         child: ListView(

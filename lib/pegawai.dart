@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:latihan_flutter/model/m_pegawai.dart';
+import 'package:latihan_flutter/nav/sidebar.dart';
 import 'package:latihan_flutter/pegawai_detail.dart';
 import 'package:latihan_flutter/pegawai_input.dart';
 
@@ -32,6 +33,7 @@ class _DashboardPegawaiState extends State<DashboardPegawai> {
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,
       ),
+      drawer: Sidebar(),
       body: Padding(
         padding: EdgeInsets.all(10),
         child: ListView(

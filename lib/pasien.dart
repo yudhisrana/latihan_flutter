@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:latihan_flutter/model/m_pasien.dart';
+import 'package:latihan_flutter/nav/sidebar.dart';
 import 'package:latihan_flutter/pasien_detail.dart';
 import 'package:latihan_flutter/pasien_input.dart';
 
@@ -32,6 +33,7 @@ class _DashboardPasienState extends State<DashboardPasien> {
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
       ),
+      drawer: Sidebar(),
       body: Padding(
         padding: EdgeInsets.all(10),
         child: ListView(

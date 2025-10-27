@@ -4,6 +4,10 @@ import 'package:latihan_flutter/nav/sidebar.dart';
 import 'package:latihan_flutter/poly_detail.dart';
 import 'package:latihan_flutter/poly_input.dart';
 
+void main() {
+  runApp(const PolyPage());
+}
+
 class PolyPage extends StatelessWidget {
   const PolyPage({super.key});
 
@@ -29,37 +33,39 @@ class DashboardPoly extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: ListView(
           children: [
-            // Card 1
             GestureDetector(
-              child: Card(
-                child: ListTile(
-                  title: Text('Poly Umum'),
-                  onTap: () {
-                    Poly polyUmum = Poly(namaPoly: 'Poly Umum');
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => DetailPoly(poly: polyUmum)));
-                  },
-                ),
-              ),
+              child: Card(child: ListTile(title: Text("Poly Umum"))),
+              onTap: () {
+                Poly polyUmum = Poly(namaPoly: 'Poly Umum');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailPoly(poly: polyUmum),
+                  ),
+                );
+              },
             ),
-
-            // Card 2
             GestureDetector(
-              child: Card(
-                child: ListTile(
-                  title: Text('Poly Anak'),
-                ),
-              ),
-            )
+              child: Card(child: ListTile(title: Text("Poly Anak"))),
+              onTap: () {
+                Poly polyAnak = Poly(namaPoly: 'Poly Anak');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailPoly(poly: polyAnak),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => InputPoly()));
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => InputPoly()),
+          );
         },
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,

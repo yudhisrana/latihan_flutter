@@ -22,16 +22,15 @@ class _InputPolyState extends State<InputPoly> {
 
   _btnSimpan() {
     return ElevatedButton(
-        onPressed: () {
-          Poly poly = Poly(namaPoly: _nmPoly.text);
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => DetailPoly(
-                        poly: poly,
-                      )));
-        },
-        child: Text("Simpan Data"));
+      onPressed: () {
+        Poly poly = Poly(namaPoly: _nmPoly.text);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => DetailPoly(poly: poly)),
+        );
+      },
+      child: Text("Simpan Data"),
+    );
   }
 
   @override
@@ -44,22 +43,19 @@ class _InputPolyState extends State<InputPoly> {
       ),
       body: SingleChildScrollView(
         child: Form(
-            key: _formKey,
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 20,
-                  ),
-                  _namaPoly(),
-                  SizedBox(
-                    height: 35,
-                  ),
-                  _btnSimpan(),
-                ],
-              ),
-            )),
+          key: _formKey,
+          child: Padding(
+            padding: EdgeInsets.all(10),
+            child: Column(
+              children: [
+                SizedBox(height: 20),
+                _namaPoly(),
+                SizedBox(height: 35),
+                _btnSimpan(),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

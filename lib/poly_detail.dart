@@ -13,43 +13,50 @@ class DetailPoly extends StatefulWidget {
 }
 
 class _DetailPolyState extends State<DetailPoly> {
-  // tombol edit
+  // Tombol Edit
   _btnEdit() {
     return ElevatedButton(
-        onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => UpdatePoly(poly: widget.poly)));
-        },
-        child: Text("Ubah"));
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => UpdatePoly(poly: widget.poly),
+          ),
+        );
+      },
+      child: Text("Ubah"),
+    );
   }
 
-  // tombol hapus
+  // Tombol Hapus
   _btnHapus() {
     return ElevatedButton(
-        onPressed: () {
-          AlertDialog alertDialog = AlertDialog(
-            content: Text("Yakin untuk menghapus data ini?"),
-            actions: [
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => PolyPage()));
-                  },
-                  child: Text("Ya")),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text("Tidak")),
-            ],
-          );
-
-          showDialog(context: context, builder: (context) => alertDialog);
-        },
-        child: Text("Hapus"));
+      onPressed: () {
+        AlertDialog alertDialog = AlertDialog(
+          content: Text("Anda akan menghapus data ini?"),
+          actions: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PolyPage()),
+                );
+              },
+              child: Text("Ya"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text("Tidak"),
+            ),
+          ],
+        );
+        showDialog(context: context, builder: (context) => alertDialog);
+      },
+      child: Text("Hapus"),
+    );
   }
 
   @override
@@ -69,11 +76,8 @@ class _DetailPolyState extends State<DetailPoly> {
           SizedBox(height: 35),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _btnEdit(),
-              _btnHapus(),
-            ],
-          )
+            children: [_btnEdit(), _btnHapus()],
+          ),
         ],
       ),
     );

@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:latihan_flutter/nav/bottom.dart';
 import 'package:latihan_flutter/nav/sidebar.dart';
 
-void main() {
-  runApp(const HomePage());
-}
-
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(home: Home());
-  }
+  State<HomePage> createState() => _HomePageState();
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class _HomePageState extends State<HomePage> {
+  final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldkey,
       appBar: AppBar(
         title: Text('Home Dashboard'),
         backgroundColor: Colors.green,
@@ -27,6 +23,7 @@ class Home extends StatelessWidget {
       ),
       drawer: Sidebar(),
       body: Center(child: const Text('Dashboard')),
+      bottomNavigationBar: BottomNav(scaffoldkey: _scaffoldkey),
     );
   }
 }

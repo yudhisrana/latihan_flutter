@@ -1,28 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:latihan_flutter/model/m_poly.dart';
+import 'package:latihan_flutter/nav/bottom.dart';
 import 'package:latihan_flutter/nav/sidebar.dart';
 import 'package:latihan_flutter/poly_detail.dart';
 import 'package:latihan_flutter/poly_input.dart';
 
-void main() {
-  runApp(const PolyPage());
-}
-
-class PolyPage extends StatelessWidget {
+class PolyPage extends StatefulWidget {
   const PolyPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(home: DashboardPoly());
-  }
+  State<PolyPage> createState() => _PolyPageState();
 }
 
-class DashboardPoly extends StatelessWidget {
-  const DashboardPoly({super.key});
+class _PolyPageState extends State<PolyPage> {
+  final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldkey,
       appBar: AppBar(
         title: Text('Poly'),
         backgroundColor: Colors.green,
@@ -72,6 +68,7 @@ class DashboardPoly extends StatelessWidget {
         tooltip: "Tambah Data",
         child: Icon(Icons.add),
       ),
+      bottomNavigationBar: BottomNav(scaffoldkey: _scaffoldkey),
     );
   }
 }

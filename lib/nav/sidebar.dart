@@ -59,7 +59,7 @@ class _SidebarState extends State<Sidebar> {
               Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Home()),
+                MaterialPageRoute(builder: (context) => const HomePage()),
               );
             },
           ),
@@ -70,7 +70,7 @@ class _SidebarState extends State<Sidebar> {
               Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const DashboardPoly()),
+                MaterialPageRoute(builder: (context) => const PolyPage()),
               );
             },
           ),

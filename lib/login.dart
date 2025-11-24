@@ -42,7 +42,7 @@ class _LoginState extends State<Login> {
 
             if (value) {
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => const Home()));
+                  MaterialPageRoute(builder: (context) => const HomePage()));
             } else {
               AlertDialog alertDialog = AlertDialog(
                 content: const Text("Username Atau Password Tidak Terdaftar"),

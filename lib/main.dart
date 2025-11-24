@@ -11,6 +11,6 @@ Future<void> main() async {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: "Aplikasi Klinik",
-    home: token == null ? const Login() : const Home(),
+    home: token == null ? const Login() : const HomePage(),
   ));
 }
